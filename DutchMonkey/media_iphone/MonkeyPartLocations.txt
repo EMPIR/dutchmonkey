@@ -1,0 +1,72 @@
+Canvas Size @2x = 960,640
+Canvas Size     = 480,320
+Head		@2x = 400,227
+Head		    = 200,?
+Belly		@2x = 167,218
+Belly		    = ?,109
+RightArm	@2x = 90,184
+RightArm	    = 
+LeftArm		@2x = 83,186
+LeftArm		    = 
+RightLeg	@2x = 98,148
+RightLeg	    = 
+Tail		@2x = 253,258
+Tail		    = 
+
+
+
+Locations
+Top Left Corners-x,y
+Head 		= 22,59 - 59 = 0
+Belly		= 75,150 - 59 = 91
+Right Arm 	= 140,161 - 59  = 102
+Left Arm 	= 51,163 - 59 = 104
+Right Leg	= 120,231 - 59 = 172
+Left Leg	= 63,228 - 59 = 169
+Tail 		= 137,153 - 59 = 94
+
+Absolute Pivot Points
+Head		= 121,160 	@242,320
+Belly		= 121, 213 	@242,426 //Don't think this matters?
+Right Arm	= 140, 175 	@281,350
+Left Arm	= 92, 174 	@184,347
+Right Leg	= 141, 237 	@283,475
+Left Leg	= 95, 240 	@190,480
+Tail		= 143, 228	@286,456
+
+Relative Pivot Points
+Head		= 242 - 43, 320 - 118 = @199,202
+Belly		= 242 - 150,426 - 344 = @92,82
+Right Arm	= 281 - 281,350 - 322 = @0,28
+Left Arm	= 184 - 102,347 - 325 = @82,22
+Right Leg	= 283 - 241,475 - 462 = @42,13
+Left Leg	= 190 - 126,480 - 455 = @64,25
+Tail		= 286 - 274,456 - 305 = @12,151
+
+@2x Locations
+Top Left Corners-x,y
+Head 		= 43,118
+Belly		= 150,344
+Right Arm 	= 281,322
+Left Arm 	= 102,325
+Right Leg	= 241,462
+Left Leg	= 126,455
+Tail 		= 274,305
+
+@2x Absolute Pivot Points
+Head		= 242,320
+Belly		= 242,426 //Don't think this matters?
+Right Arm	= 281,350
+Left Arm	= 184,347
+Right Leg	= 283,475
+Left Leg	= 190,480
+Tail		= 286,456
+
+@2x Relative Pivot Points
+Head		= 242 - 43, 320 - 118 = 199,202
+Belly		= 242 - 150,426 - 344 = 92,82
+Right Arm	= 281 - 281,350 - 322 = 0,28
+Left Arm	= 184 - 102,347 - 325 = 82,22
+Right Leg	= 283 - 241,475 - 462 = 42,13
+Left Leg	= 190 - 126,480 - 455 = 64,25
+Tail		= 286 - 274,456 - 305 = 12,151
