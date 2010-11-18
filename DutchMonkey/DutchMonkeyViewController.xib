@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1024</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
+		<string key="IBDocument.SystemVersion">10H574</string>
 		<string key="IBDocument.InterfaceBuilderVersion">804</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -42,7 +42,7 @@
 				<int key="NSvFlags">319</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIImageView" id="771142711">
+					<object class="IBUIImageView" id="703453588">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{137, 94}, {127, 120}}</string>
@@ -54,7 +54,7 @@
 							<string key="NSResourceName">Tail.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="748981850">
+					<object class="IBUIImageView" id="539097630">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{63, 169}, {52, 78}}</string>
@@ -66,7 +66,7 @@
 							<string key="NSResourceName">LeftLeg.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="1008821578">
+					<object class="IBUIImageView" id="465311589">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{120, 172}, {49, 74}}</string>
@@ -78,7 +78,7 @@
 							<string key="NSResourceName">RightLeg.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="200811475">
+					<object class="IBUIImageView" id="326491692">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{140, 102}, {45, 92}}</string>
@@ -90,7 +90,7 @@
 							<string key="NSResourceName">RightArm.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="463888096">
+					<object class="IBUIImageView" id="79868007">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{51, 104}, {42, 94}}</string>
@@ -102,7 +102,7 @@
 							<string key="NSResourceName">LeftArm.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="1050426875">
+					<object class="IBUIImageView" id="356359071">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{75, 91}, {84, 110}}</string>
@@ -114,7 +114,7 @@
 							<string key="NSResourceName">Belly.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="606168693">
+					<object class="IBUIImageView" id="579622441">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{22, 0}, {200, 114}}</string>
@@ -155,6 +155,54 @@
 					</object>
 					<int key="connectionID">7</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyHead</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="579622441"/>
+					</object>
+					<int key="connectionID">15</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyRightArm</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="326491692"/>
+					</object>
+					<int key="connectionID">16</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyTail</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="703453588"/>
+					</object>
+					<int key="connectionID">17</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyLeftArm</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="79868007"/>
+					</object>
+					<int key="connectionID">18</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyLeftLeg</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="539097630"/>
+					</object>
+					<int key="connectionID">19</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">monkeyRightLeg</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="465311589"/>
+					</object>
+					<int key="connectionID">20</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -181,49 +229,49 @@
 						<reference key="object" ref="774585933"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="1050426875"/>
-							<reference ref="606168693"/>
-							<reference ref="748981850"/>
-							<reference ref="1008821578"/>
-							<reference ref="463888096"/>
-							<reference ref="200811475"/>
-							<reference ref="771142711"/>
+							<reference ref="356359071"/>
+							<reference ref="579622441"/>
+							<reference ref="539097630"/>
+							<reference ref="465311589"/>
+							<reference ref="79868007"/>
+							<reference ref="326491692"/>
+							<reference ref="703453588"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="1050426875"/>
+						<reference key="object" ref="356359071"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="606168693"/>
+						<reference key="object" ref="579622441"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
-						<reference key="object" ref="200811475"/>
+						<reference key="object" ref="326491692"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="463888096"/>
+						<reference key="object" ref="79868007"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="748981850"/>
+						<reference key="object" ref="539097630"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="1008821578"/>
+						<reference key="object" ref="465311589"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="771142711"/>
+						<reference key="object" ref="703453588"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</object>
@@ -275,7 +323,7 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">AUMJAABCvAAAA</bytes>
 					</object>
-					<string>{{439, 295}, {480, 320}}</string>
+					<string>{{673, 355}, {480, 320}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -303,7 +351,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">14</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -311,6 +359,66 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DutchMonkeyViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>monkeyHead</string>
+							<string>monkeyLeftArm</string>
+							<string>monkeyLeftLeg</string>
+							<string>monkeyRightArm</string>
+							<string>monkeyRightLeg</string>
+							<string>monkeyTail</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>monkeyHead</string>
+							<string>monkeyLeftArm</string>
+							<string>monkeyLeftLeg</string>
+							<string>monkeyRightArm</string>
+							<string>monkeyRightLeg</string>
+							<string>monkeyTail</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyHead</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyLeftArm</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyLeftLeg</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyRightArm</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyRightLeg</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">monkeyTail</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/DutchMonkeyViewController.h</string>
@@ -405,7 +513,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="736932610">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="351815828">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UIResponder.h</string>
 					</object>
@@ -421,7 +529,7 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">UIResponder</string>
 					<string key="superclassName">NSObject</string>
-					<reference key="sourceIdentifier" ref="736932610"/>
+					<reference key="sourceIdentifier" ref="351815828"/>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UISearchBar</string>
