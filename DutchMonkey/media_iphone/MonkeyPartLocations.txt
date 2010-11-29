@@ -17,13 +17,13 @@ Tail		    =
 
 Locations
 Top Left Corners-x,y
-Head 		= 22,59 - 59 = 0
-Belly		= 75,150 - 59 = 91
-Right Arm 	= 140,161 - 59  = 102
-Left Arm 	= 51,163 - 59 = 104
-Right Leg	= 120,231 - 59 = 172
-Left Leg	= 63,228 - 59 = 169
-Tail 		= 137,153 - 59 = 94
+Head 		= 22,48
+Belly		= 75,139
+Right Arm 	= 140,150
+Left Arm 	= 51,152
+Right Leg	= 120, 220
+Left Leg	= 63, 217
+Tail 		= 137,142
 
 Absolute Pivot Points
 Head		= 121,160 	@242,320

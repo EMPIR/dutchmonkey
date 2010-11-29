@@ -18,12 +18,51 @@
 
 @implementation DutchMonkeyViewController
 
-@synthesize monkeyHead, monkeyRightLeg, monkeyLeftLeg, monkeyRightArm, monkeyLeftArm, monkeyTail;
+@synthesize monkeyHead, monkeyRightLeg, monkeyLeftLeg, monkeyRightArm, monkeyLeftArm, monkeyTail, gameTimer;
 
 CGPoint firstPoint;
 CGPoint lastPoint;
 BOOL touching;
+UIImageView *imgView = NULL;
+int bodypart;
+CGPoint translatePivot;
+CGRect rect;
 
+double headAngle = 0;
+double headAngleIncrement = 0.01;
+
+double tailAngle = 0;
+double tailAngleIncrement = 0.01;
+
+double footRAngle = 0;
+double footRAngleIncrement = 0.02;
+double footLAngle = 0;
+double footLAngleIncrement = 0.02;
+
+double armRAngle = 0;
+double armRAngleIncrement = 0.02;
+double armLAngle = 0;
+double armLAngleIncrement = 0.02;
+
+const int HEAD_PIVOT [] = {0,30};
+const int ARMR_PIVOT [] = {-22,-45};
+const int ARML_PIVOT [] = {21,-47};
+const int LEGR_PIVOT [] = {-24,-20};
+const int LEGL_PIVOT [] = {24,-20};
+const int TAIL_PIVOT [] = {-60,0};
+
+
+/*
+typedef enum BodyPart{
+	HEAD = 1,
+	BELLY = 2,
+	ARMLEFT = 3,
+	ARMRIGHT = 4,
+	LEGLEFT = 5,
+	LEGRIGHT = 6,
+	TAIL = 7
+};
+*/
 // Checks to see which view, or views, the point is in and then calls a method to perform the opening animation,
 // which  makes the piece slightly larger, as if it is being picked up by the user.
 -(void)dispatchFirstTouchAtPoint:(CGPoint)touchPoint forEvent:(UIEvent *)event
@@ -37,11 +76,67 @@ BOOL touching;
 	
 }
 
--(CGPoint) getCenter: (CGRect )rect
+-(CGPoint) getPivot: (int)bodyPart: (CGRect) rect
 {
 	CGPoint p;
+	/*
 	p.x =  rect.origin.x + rect.size.width / 2.0;
 	p.y =  rect.origin.y + rect.size.height / 2.0;
+	*/
+	
+	switch(bodyPart)
+	{
+		case 0: //head
+		{
+			
+			translatePivot.x = HEAD_PIVOT[0];
+			translatePivot.y = HEAD_PIVOT[1];
+			break;
+		}
+		case 1: //right arm
+		{
+			translatePivot.x = ARMR_PIVOT[0];
+			translatePivot.y = ARMR_PIVOT[1];
+			break;
+		}
+		case 2: //left arm
+		{
+			translatePivot.x = ARML_PIVOT[0];
+			translatePivot.y = ARML_PIVOT[1];
+
+			break;
+		}
+		case 3: //right leg
+		{
+			translatePivot.x = LEGR_PIVOT[0];
+			translatePivot.y = LEGR_PIVOT[1];
+			
+			break;
+		}
+		case 4: //left leg
+		{
+			translatePivot.x = LEGL_PIVOT[0];
+			translatePivot.y = LEGR_PIVOT[1];
+			break;
+		}
+		case 5: //tail
+		{
+			translatePivot.x = TAIL_PIVOT[0];
+			translatePivot.y = TAIL_PIVOT[1];
+			break;
+		}
+		default:
+		{
+			translatePivot.x = 0;
+			translatePivot.y = -20;
+
+			
+		}
+	}
+	
+	p.x = (rect.origin.x + (rect.size.width / 2.0));// + xp;
+	p.y = (rect.origin.y + (rect.size.height / 2.0));// + yp;;
+
 	return p;
 }
 
@@ -57,6 +152,8 @@ BOOL touching;
 	
 	
 	double len = sqrt(_a.x * _a.x + _a.y * _a.y);
+	if(len == 0)
+		return 0;
 	_a.x = _a.x / len;
 	_a.y = _a.y / len;
 	double cprod = _a.x * _b.y - _a.y * _b.x;
@@ -82,40 +179,61 @@ BOOL touching;
 -(void)dispatchTouchEvent:(UIView *)theView toPosition:(CGPoint)position
 {
 	
-	UIImageView *imgView = NULL;
-	CGRect frame;
+	int bodypart2 = 0;
+	CGRect rect2;
 	
+	UIImageView *imgView2 = NULL;
 	//NSLog(@"dispatchTouchEvent");
-	
-	if(CGRectContainsPoint([monkeyRightArm frame],position)){
-		frame = monkeyRightArm.frame;
-		imgView = monkeyRightArm;
+	if (CGRectContainsPoint([monkeyHead frame], position)) {
+		imgView2 = monkeyHead;
+		bodypart2 = 0;
+		rect2 = monkeyHead.frame;
+	}
+	else if(CGRectContainsPoint([monkeyRightArm frame],position)){
+		imgView2 = monkeyRightArm;
+		bodypart2 = 1;
+		rect2 = monkeyRightArm.frame;
 	}
 	else if(CGRectContainsPoint([monkeyLeftArm frame],position)){
-		frame = monkeyLeftArm.frame;
-		imgView = monkeyLeftArm;
+		imgView2 = monkeyLeftArm;
+		bodypart2 = 2;
+		rect2 = monkeyLeftArm.frame;
 	}
 	else if(CGRectContainsPoint([monkeyRightLeg frame],position)){
-		frame = monkeyRightLeg.frame;
-		imgView = monkeyRightLeg;
+		imgView2 = monkeyRightLeg;
+		bodypart2 = 3;
+		rect2 = monkeyRightLeg.frame;
 	}
 	else if(CGRectContainsPoint([monkeyLeftLeg frame],position)){
-		frame = monkeyLeftLeg.frame;
-		imgView = monkeyLeftLeg;
-	}
-	else if (CGRectContainsPoint([monkeyHead frame], position)) {
-		frame = monkeyHead.frame;
-		imgView = monkeyHead;
+		imgView2 = monkeyLeftLeg;
+		bodypart2 = 4;
+		rect2 = monkeyLeftLeg.frame;
 	}
 	else if (CGRectContainsPoint([monkeyTail frame], position)) {
-		frame = monkeyTail.frame;
-		imgView = monkeyTail;
+		imgView2 = monkeyTail;
+		bodypart2 = 5;
+		rect2 = monkeyLeftLeg.frame;
 	}
 	
-	if(imgView != NULL)
+	if(firstPoint.x == -1)
 	{
+		firstPoint.x = position.x;
+		firstPoint.y = position.y;
+		lastPoint.x = position.x;
+		lastPoint.y = position.y;
+	}
+	
+	
+	if(imgView2 != NULL)
+	{
+		if(imgView == NULL)
+		{
+			imgView = imgView2;
+			bodypart = bodypart2;
+			rect = rect2;
+		}
 		//CGPoint origin = frame.origin;
-		CGPoint origin = [self getCenter:frame];
+		CGPoint origin = [self getPivot:bodypart:rect];
 		if(firstPoint.x == -1)
 		{
 			firstPoint.x = position.x;
@@ -130,8 +248,9 @@ BOOL touching;
 			double angle = [self getAngle:origin:firstPoint:lastPoint];
 			NSLog(@"dispatch Touch event. Origin: %f, %f. First Point: %f %f. Last Point: %f %f. Angle: %f", 
 				  origin.x, origin.y, firstPoint.x, firstPoint.y, lastPoint.x, lastPoint.y, angle );
+			imgView.transform = CGAffineTransformTranslate(imgView.transform,translatePivot.x,translatePivot.y);
 			imgView.transform = CGAffineTransformRotate(imgView.transform, angle);
-		}
+			imgView.transform = CGAffineTransformTranslate(imgView.transform,-translatePivot.x,-translatePivot.y);		}
 	}
 	 
 	
@@ -199,6 +318,7 @@ BOOL touching;
 		// Sends to the dispatch method, which will make sure the appropriate subview is acted upon
 		[self dispatchTouchEndEvent:[touch view] toPosition:[touch locationInView:self.view]];
 	}
+	imgView = NULL;
 }
 
 
@@ -218,11 +338,103 @@ BOOL touching;
 }
 */
 
+-(void)gameloop{
+	
+	if(headAngle > 0.25)
+		headAngleIncrement = -0.01;
+	
+	if(headAngle < -0.25)
+		headAngleIncrement = 0.01;
+	headAngle += headAngleIncrement;
+	
+	if(footRAngle > 0.3)
+		footRAngleIncrement = -0.02;
+	
+	if(footRAngle < -0.3)
+		footRAngleIncrement = 0.02;
+	
+	footRAngle +=footRAngleIncrement;
+	
+	if(footLAngle > 0.3)
+		footLAngleIncrement = -0.02;
+	
+	if(footLAngle < -0.3)
+		footLAngleIncrement = 0.02;
+	
+	footLAngle +=footLAngleIncrement;
+	
+	
+	///
+	if(armRAngle > 0.3)
+		armRAngleIncrement = -0.02;
+	
+	if(armRAngle < -0.3)
+		armRAngleIncrement = 0.02;
+	
+	armRAngle +=armRAngleIncrement;
+	
+	if(armLAngle > 0.3)
+		armLAngleIncrement = -0.02;
+	
+	if(armLAngle < -0.3)
+		armLAngleIncrement = 0.02;
+	
+	armLAngle +=armLAngleIncrement;
 
+	
+	if(tailAngle < -0.3)
+		tailAngleIncrement = 0.02;
+	
+	if(tailAngle > 0.3)
+		tailAngleIncrement = -
+		0.02;
+	
+	tailAngle +=tailAngleIncrement;
+	
+	
+	monkeyTail.transform = CGAffineTransformIdentity;
+	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,TAIL_PIVOT[0],TAIL_PIVOT[1]);
+	monkeyTail.transform = CGAffineTransformRotate(monkeyTail.transform, tailAngle);
+	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,-TAIL_PIVOT[0],-TAIL_PIVOT[1]);
+	
+	monkeyHead.transform = CGAffineTransformIdentity;
+	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,HEAD_PIVOT[0],HEAD_PIVOT[1]);
+	monkeyHead.transform = CGAffineTransformRotate(monkeyHead.transform, headAngle);
+	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,-HEAD_PIVOT[0],-HEAD_PIVOT[1]);
+	
+	monkeyRightLeg.transform = CGAffineTransformIdentity;
+	monkeyRightLeg.transform = CGAffineTransformTranslate(monkeyRightLeg.transform,LEGR_PIVOT[0],LEGR_PIVOT[1]);
+	monkeyRightLeg.transform = CGAffineTransformRotate(monkeyRightLeg.transform, footRAngle);
+	monkeyRightLeg.transform = CGAffineTransformTranslate(monkeyRightLeg.transform,-LEGR_PIVOT[0],-LEGR_PIVOT[1]);
+	
+	monkeyLeftLeg.transform = CGAffineTransformIdentity;
+	monkeyLeftLeg.transform = CGAffineTransformTranslate(monkeyLeftLeg.transform,LEGL_PIVOT[0],LEGL_PIVOT[1]);
+	monkeyLeftLeg.transform = CGAffineTransformRotate(monkeyLeftLeg.transform, footLAngle);
+	monkeyLeftLeg.transform = CGAffineTransformTranslate(monkeyLeftLeg.transform,-LEGL_PIVOT[0],-LEGL_PIVOT[1]);
+	
+	
+	monkeyRightArm.transform = CGAffineTransformIdentity;
+	monkeyRightArm.transform = CGAffineTransformTranslate(monkeyRightArm.transform,ARMR_PIVOT[0],ARMR_PIVOT[1]);
+	monkeyRightArm.transform = CGAffineTransformRotate(monkeyRightArm.transform, armRAngle);
+	monkeyRightArm.transform = CGAffineTransformTranslate(monkeyRightArm.transform,-ARMR_PIVOT[0],-ARMR_PIVOT[1]);
+	
+	monkeyLeftArm.transform = CGAffineTransformIdentity;
+	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,ARML_PIVOT[0],ARML_PIVOT[1]);
+	monkeyLeftArm.transform = CGAffineTransformRotate(monkeyLeftArm.transform, armLAngle);
+	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,-ARML_PIVOT[0],-ARML_PIVOT[1]);
+	
+	
+	
+}
 
 // Implement viewDidLoad to do  additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	firstPoint.x = -1;
+	
+	gameTimer = [[NSTimer scheduledTimerWithTimeInterval:.025 target:self selector:@selector(gameloop) userInfo:nil repeats:YES] retain];
+	
+
 }
 
 

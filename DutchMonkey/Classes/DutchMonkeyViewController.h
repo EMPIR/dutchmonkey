@@ -15,6 +15,7 @@
 	IBOutlet UIImageView *monkeyRightLeg;
 	IBOutlet UIImageView *monkeyLeftLeg;
 	IBOutlet UIImageView *monkeyTail;
+	NSTimer *gameTimer;
 }
 
 @property (nonatomic, retain) UIImageView *monkeyHead;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) UIImageView *monkeyRightLeg;
 @property (nonatomic, retain) UIImageView *monkeyLeftLeg;
 @property (nonatomic, retain) UIImageView *monkeyTail;
+@property (nonatomic,retain) NSTimer *gameTimer;
 
 @end
 
