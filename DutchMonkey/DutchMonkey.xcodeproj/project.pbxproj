@@ -11,6 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		270B974112A3689500C6AA3E /* Monkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B974012A3689500C6AA3E /* Monkey.m */; };
 		277E4EE81298B8C4006F38B0 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE61298B8C4006F38B0 /* background.jpg */; };
 		277E4EE91298B8C4006F38B0 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE71298B8C4006F38B0 /* background@2x.jpg */; };
 		27F9B14B129387A5001A1F03 /* Tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F9B13D129387A5001A1F03 /* Tail.png */; };
@@ -39,6 +40,8 @@
 		1D3623250D0F684500981E51 /* DutchMonkeyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DutchMonkeyAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* DutchMonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DutchMonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		270B973F12A3689500C6AA3E /* Monkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monkey.h; sourceTree = "<group>"; };
+		270B974012A3689500C6AA3E /* Monkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monkey.m; sourceTree = "<group>"; };
 		277E4EE61298B8C4006F38B0 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = media_iphone/background.jpg; sourceTree = "<group>"; };
 		277E4EE71298B8C4006F38B0 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background@2x.jpg"; path = "media_iphone/background@2x.jpg"; sourceTree = "<group>"; };
 		27F9B13D129387A5001A1F03 /* Tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tail.png; path = media_iphone/Tail.png; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				1D3623250D0F684500981E51 /* DutchMonkeyAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* DutchMonkeyViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* DutchMonkeyViewController.m */,
+				270B973F12A3689500C6AA3E /* Monkey.h */,
+				270B974012A3689500C6AA3E /* Monkey.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* DutchMonkeyAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* DutchMonkeyViewController.m in Sources */,
+				270B974112A3689500C6AA3E /* Monkey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "DutchMonkeyViewController.h"
-
+#import "Monkey.h"
 
 @interface DutchMonkeyViewController()
 -(void)dispatchFirstTouchAtPoint:(CGPoint)touchPoint forEvent:(UIEvent *)event;
@@ -18,6 +18,8 @@
 
 @implementation DutchMonkeyViewController
 
+
+@synthesize m_monkey;
 @synthesize monkeyHead, monkeyRightLeg, monkeyLeftLeg, monkeyRightArm, monkeyLeftArm, monkeyTail, gameTimer;
 
 CGPoint firstPoint;
@@ -28,8 +30,9 @@ int bodypart;
 CGPoint translatePivot;
 CGRect rect;
 
-double headAngle = 0;
-double headAngleIncrement = 0.01;
+//double headAngle = 0;
+//double headAngleIncrement = 0.01;
+
 
 double tailAngle = 0;
 double tailAngleIncrement = 0.01;
@@ -339,8 +342,9 @@ typedef enum BodyPart{
 */
 
 -(void)gameloop{
+	[m_monkey gameloop];
 	
-	if(headAngle > 0.25)
+	/*if(headAngle > 0.25)
 		headAngleIncrement = -0.01;
 	
 	if(headAngle < -0.25)
@@ -396,12 +400,11 @@ typedef enum BodyPart{
 	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,TAIL_PIVOT[0],TAIL_PIVOT[1]);
 	monkeyTail.transform = CGAffineTransformRotate(monkeyTail.transform, tailAngle);
 	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,-TAIL_PIVOT[0],-TAIL_PIVOT[1]);
-	
+
 	monkeyHead.transform = CGAffineTransformIdentity;
 	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,HEAD_PIVOT[0],HEAD_PIVOT[1]);
 	monkeyHead.transform = CGAffineTransformRotate(monkeyHead.transform, headAngle);
 	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,-HEAD_PIVOT[0],-HEAD_PIVOT[1]);
-	
 	monkeyRightLeg.transform = CGAffineTransformIdentity;
 	monkeyRightLeg.transform = CGAffineTransformTranslate(monkeyRightLeg.transform,LEGR_PIVOT[0],LEGR_PIVOT[1]);
 	monkeyRightLeg.transform = CGAffineTransformRotate(monkeyRightLeg.transform, footRAngle);
@@ -422,7 +425,7 @@ typedef enum BodyPart{
 	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,ARML_PIVOT[0],ARML_PIVOT[1]);
 	monkeyLeftArm.transform = CGAffineTransformRotate(monkeyLeftArm.transform, armLAngle);
 	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,-ARML_PIVOT[0],-ARML_PIVOT[1]);
-	
+*/	
 	
 	
 }
@@ -430,6 +433,14 @@ typedef enum BodyPart{
 // Implement viewDidLoad to do  additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[m_monkey init];
+	m_monkey = [[[Monkey  alloc] init] retain];
+	m_monkey.monkeyHead = monkeyHead;
+	m_monkey.monkeyLeftArm = monkeyLeftArm;
+	m_monkey.monkeyRightArm = monkeyRightArm;
+	m_monkey.monkeyLeftLeg = monkeyLeftLeg;
+	m_monkey.monkeyRightLeg = monkeyRightLeg;
+	m_monkey.monkeyTail = monkeyTail;
 	firstPoint.x = -1;
 	
 	gameTimer = [[NSTimer scheduledTimerWithTimeInterval:.025 target:self selector:@selector(gameloop) userInfo:nil repeats:YES] retain];
@@ -466,6 +477,7 @@ typedef enum BodyPart{
 
 - (void)dealloc {
     [super dealloc];
+	[m_monkey release];
 }
 
 @end

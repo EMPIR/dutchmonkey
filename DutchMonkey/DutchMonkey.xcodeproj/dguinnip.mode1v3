@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>270B973C12A3683900C6AA3E</string>
+						<string>270B98AB12A3728300C6AA3E</string>
 						<key>history</key>
 						<array>
 							<string>27FC6E7012A362360082739B</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>270B973D12A3683900C6AA3E</string>
+						<string>270B98AC12A3728300C6AA3E</string>
 						<key>history</key>
 						<array>
 							<string>27FC6E7112A362360082739B</string>
@@ -353,7 +353,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -396,7 +396,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DutchMonkeyViewController.m</string>
+								<string>Monkey.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -404,11 +404,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DutchMonkeyViewController.m</string>
+										<string>Monkey.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>270B973912A3683900C6AA3E</string>
+										<string>270B98AA12A3728300C6AA3E</string>
 										<key>history</key>
 										<array>
 											<string>27F9B1991293981A001A1F03</string>
@@ -416,8 +416,11 @@
 											<string>27F9B19B1293981A001A1F03</string>
 											<string>27F9B19C1293981A001A1F03</string>
 											<string>27F9B19D1293981A001A1F03</string>
-											<string>27177E951299FC7D008AD0BB</string>
-											<string>27FC6E6F12A362360082739B</string>
+											<string>270B974D12A3696D00C6AA3E</string>
+											<string>270B989512A371DB00C6AA3E</string>
+											<string>270B98A212A3726000C6AA3E</string>
+											<string>270B98A312A3726000C6AA3E</string>
+											<string>270B98A412A3726000C6AA3E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -615,9 +618,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>27F9B13712936757001A1F03</string>
+		<string>270B97DB12A36C8900C6AA3E</string>
+		<string>270B97C412A36C2000C6AA3E</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>277E4F231298BE23006F38B0</string>
 		<string>277E4F201298BE23006F38B0</string>
+		<string>27F9B13712936757001A1F03</string>
 		<string>/Users/dguinnip/Build/DutchMonkey/DutchMonkey/DutchMonkey.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -642,7 +649,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>Monkey.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -659,6 +666,8 @@
 							<string>304pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -711,7 +720,7 @@
 			<key>WindowToolGUID</key>
 			<string>27F9B13712936757001A1F03</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -820,13 +829,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>27FC6E6812A2211B0082739B</string>
+				<string>270B975512A3696D00C6AA3E</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>27FC6E6912A2211B0082739B</string>
-				<string>27FC6E6A12A2211B0082739B</string>
-				<string>27FC6E6B12A2211B0082739B</string>
-				<string>27FC6E6C12A2211B0082739B</string>
-				<string>27FC6E6D12A2211B0082739B</string>
+				<string>270B975612A3696D00C6AA3E</string>
+				<string>270B975712A3696D00C6AA3E</string>
+				<string>270B975812A3696D00C6AA3E</string>
+				<string>270B975912A3696D00C6AA3E</string>
+				<string>270B975A12A3696D00C6AA3E</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -988,7 +997,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>27FC6E6E12A2211B0082739B</string>
+				<string>270B976612A369BC00C6AA3E</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

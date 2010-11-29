@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Monkey.h"
 @interface DutchMonkeyViewController : UIViewController {
+	Monkey *m_monkey;
 	IBOutlet UIImageView *monkeyHead;
 	IBOutlet UIImageView *monkeyRightArm;
 	IBOutlet UIImageView *monkeyLeftArm;
@@ -17,7 +18,7 @@
 	IBOutlet UIImageView *monkeyTail;
 	NSTimer *gameTimer;
 }
-
+@property (nonatomic, retain) Monkey *m_monkey;
 @property (nonatomic, retain) UIImageView *monkeyHead;
 @property (nonatomic, retain) UIImageView *monkeyRightArm;
 @property (nonatomic, retain) UIImageView *monkeyLeftArm;
