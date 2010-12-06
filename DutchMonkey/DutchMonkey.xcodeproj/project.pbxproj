@@ -12,6 +12,21 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		270B974112A3689500C6AA3E /* Monkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 270B974012A3689500C6AA3E /* Monkey.m */; };
+		2720F5CF12AC7905000D9CB9 /* DoughnutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720F5CD12AC7905000D9CB9 /* DoughnutView.m */; };
+		2720F5D012AC7905000D9CB9 /* DoughnutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5CE12AC7905000D9CB9 /* DoughnutView.xib */; };
+		2720F5FF12AC7B37000D9CB9 /* ChocolateIcedSpinkles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5FA12AC7B37000D9CB9 /* ChocolateIcedSpinkles@2x.png */; };
+		2720F60012AC7B37000D9CB9 /* DutchApple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5FB12AC7B37000D9CB9 /* DutchApple@2x.png */; };
+		2720F60112AC7B37000D9CB9 /* DutchMonkey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5FC12AC7B37000D9CB9 /* DutchMonkey@2x.png */; };
+		2720F60212AC7B37000D9CB9 /* JalapenoCheddarSpirals@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5FD12AC7B37000D9CB9 /* JalapenoCheddarSpirals@2x.png */; };
+		2720F60312AC7B37000D9CB9 /* MapleBars@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F5FE12AC7B37000D9CB9 /* MapleBars@2x.png */; };
+		2720F60912AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F60412AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png */; };
+		2720F60A12AC7CE6000D9CB9 /* DutchApple.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F60512AC7CE6000D9CB9 /* DutchApple.png */; };
+		2720F60B12AC7CE6000D9CB9 /* DutchMonkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F60612AC7CE6000D9CB9 /* DutchMonkey.png */; };
+		2720F60C12AC7CE6000D9CB9 /* JalapenoCheddarSpirals.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F60712AC7CE6000D9CB9 /* JalapenoCheddarSpirals.png */; };
+		2720F60D12AC7CE6000D9CB9 /* MapleBars.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F60812AC7CE6000D9CB9 /* MapleBars.png */; };
+		2720F6B812AC8AAA000D9CB9 /* StringConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720F6B712AC8AAA000D9CB9 /* StringConst.m */; };
+		2720F70212AC9303000D9CB9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F70012AC9303000D9CB9 /* Icon.png */; };
+		2720F70312AC9303000D9CB9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F70112AC9303000D9CB9 /* Icon@2x.png */; };
 		277E4EE81298B8C4006F38B0 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE61298B8C4006F38B0 /* background.jpg */; };
 		277E4EE91298B8C4006F38B0 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE71298B8C4006F38B0 /* background@2x.jpg */; };
 		27F9B14B129387A5001A1F03 /* Tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F9B13D129387A5001A1F03 /* Tail.png */; };
@@ -42,6 +57,23 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		270B973F12A3689500C6AA3E /* Monkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monkey.h; sourceTree = "<group>"; };
 		270B974012A3689500C6AA3E /* Monkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monkey.m; sourceTree = "<group>"; };
+		2720F5CC12AC7905000D9CB9 /* DoughnutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoughnutView.h; sourceTree = "<group>"; };
+		2720F5CD12AC7905000D9CB9 /* DoughnutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoughnutView.m; sourceTree = "<group>"; };
+		2720F5CE12AC7905000D9CB9 /* DoughnutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DoughnutView.xib; path = Classes/DoughnutView.xib; sourceTree = "<group>"; };
+		2720F5FA12AC7B37000D9CB9 /* ChocolateIcedSpinkles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ChocolateIcedSpinkles@2x.png"; path = "media_iphone/ChocolateIcedSpinkles@2x.png"; sourceTree = "<group>"; };
+		2720F5FB12AC7B37000D9CB9 /* DutchApple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DutchApple@2x.png"; path = "media_iphone/DutchApple@2x.png"; sourceTree = "<group>"; };
+		2720F5FC12AC7B37000D9CB9 /* DutchMonkey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DutchMonkey@2x.png"; path = "media_iphone/DutchMonkey@2x.png"; sourceTree = "<group>"; };
+		2720F5FD12AC7B37000D9CB9 /* JalapenoCheddarSpirals@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "JalapenoCheddarSpirals@2x.png"; path = "media_iphone/JalapenoCheddarSpirals@2x.png"; sourceTree = "<group>"; };
+		2720F5FE12AC7B37000D9CB9 /* MapleBars@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MapleBars@2x.png"; path = "media_iphone/MapleBars@2x.png"; sourceTree = "<group>"; };
+		2720F60412AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChocolateIcedSpinkles.png; path = media_iphone/ChocolateIcedSpinkles.png; sourceTree = "<group>"; };
+		2720F60512AC7CE6000D9CB9 /* DutchApple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DutchApple.png; path = media_iphone/DutchApple.png; sourceTree = "<group>"; };
+		2720F60612AC7CE6000D9CB9 /* DutchMonkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DutchMonkey.png; path = media_iphone/DutchMonkey.png; sourceTree = "<group>"; };
+		2720F60712AC7CE6000D9CB9 /* JalapenoCheddarSpirals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = JalapenoCheddarSpirals.png; path = media_iphone/JalapenoCheddarSpirals.png; sourceTree = "<group>"; };
+		2720F60812AC7CE6000D9CB9 /* MapleBars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MapleBars.png; path = media_iphone/MapleBars.png; sourceTree = "<group>"; };
+		2720F6B612AC8AAA000D9CB9 /* StringConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringConst.h; sourceTree = "<group>"; };
+		2720F6B712AC8AAA000D9CB9 /* StringConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConst.m; sourceTree = "<group>"; };
+		2720F70012AC9303000D9CB9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = media_iphone/Icon.png; sourceTree = "<group>"; };
+		2720F70112AC9303000D9CB9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "media_iphone/Icon@2x.png"; sourceTree = "<group>"; };
 		277E4EE61298B8C4006F38B0 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = media_iphone/background.jpg; sourceTree = "<group>"; };
 		277E4EE71298B8C4006F38B0 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background@2x.jpg"; path = "media_iphone/background@2x.jpg"; sourceTree = "<group>"; };
 		27F9B13D129387A5001A1F03 /* Tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tail.png; path = media_iphone/Tail.png; sourceTree = "<group>"; };
@@ -91,6 +123,10 @@
 				28D7ACF70DDB3853001CB0EB /* DutchMonkeyViewController.m */,
 				270B973F12A3689500C6AA3E /* Monkey.h */,
 				270B974012A3689500C6AA3E /* Monkey.m */,
+				2720F5CC12AC7905000D9CB9 /* DoughnutView.h */,
+				2720F5CD12AC7905000D9CB9 /* DoughnutView.m */,
+				2720F6B612AC8AAA000D9CB9 /* StringConst.h */,
+				2720F6B712AC8AAA000D9CB9 /* StringConst.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -106,6 +142,18 @@
 		27F9B13C1293873A001A1F03 /* media_iphone */ = {
 			isa = PBXGroup;
 			children = (
+				2720F70012AC9303000D9CB9 /* Icon.png */,
+				2720F70112AC9303000D9CB9 /* Icon@2x.png */,
+				2720F60412AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png */,
+				2720F60512AC7CE6000D9CB9 /* DutchApple.png */,
+				2720F60612AC7CE6000D9CB9 /* DutchMonkey.png */,
+				2720F60712AC7CE6000D9CB9 /* JalapenoCheddarSpirals.png */,
+				2720F60812AC7CE6000D9CB9 /* MapleBars.png */,
+				2720F5FA12AC7B37000D9CB9 /* ChocolateIcedSpinkles@2x.png */,
+				2720F5FB12AC7B37000D9CB9 /* DutchApple@2x.png */,
+				2720F5FC12AC7B37000D9CB9 /* DutchMonkey@2x.png */,
+				2720F5FD12AC7B37000D9CB9 /* JalapenoCheddarSpirals@2x.png */,
+				2720F5FE12AC7B37000D9CB9 /* MapleBars@2x.png */,
 				277E4EE61298B8C4006F38B0 /* background.jpg */,
 				277E4EE71298B8C4006F38B0 /* background@2x.jpg */,
 				27F9B13D129387A5001A1F03 /* Tail.png */,
@@ -150,6 +198,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2720F5CE12AC7905000D9CB9 /* DoughnutView.xib */,
 				27F9B13C1293873A001A1F03 /* media_iphone */,
 				2899E5210DE3E06400AC0155 /* DutchMonkeyViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -235,6 +284,19 @@
 				27F9B158129387A5001A1F03 /* Head@2x.png in Resources */,
 				277E4EE81298B8C4006F38B0 /* background.jpg in Resources */,
 				277E4EE91298B8C4006F38B0 /* background@2x.jpg in Resources */,
+				2720F5D012AC7905000D9CB9 /* DoughnutView.xib in Resources */,
+				2720F5FF12AC7B37000D9CB9 /* ChocolateIcedSpinkles@2x.png in Resources */,
+				2720F60012AC7B37000D9CB9 /* DutchApple@2x.png in Resources */,
+				2720F60112AC7B37000D9CB9 /* DutchMonkey@2x.png in Resources */,
+				2720F60212AC7B37000D9CB9 /* JalapenoCheddarSpirals@2x.png in Resources */,
+				2720F60312AC7B37000D9CB9 /* MapleBars@2x.png in Resources */,
+				2720F60912AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png in Resources */,
+				2720F60A12AC7CE6000D9CB9 /* DutchApple.png in Resources */,
+				2720F60B12AC7CE6000D9CB9 /* DutchMonkey.png in Resources */,
+				2720F60C12AC7CE6000D9CB9 /* JalapenoCheddarSpirals.png in Resources */,
+				2720F60D12AC7CE6000D9CB9 /* MapleBars.png in Resources */,
+				2720F70212AC9303000D9CB9 /* Icon.png in Resources */,
+				2720F70312AC9303000D9CB9 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +311,8 @@
 				1D3623260D0F684500981E51 /* DutchMonkeyAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* DutchMonkeyViewController.m in Sources */,
 				270B974112A3689500C6AA3E /* Monkey.m in Sources */,
+				2720F5CF12AC7905000D9CB9 /* DoughnutView.m in Sources */,
+				2720F6B812AC8AAA000D9CB9 /* StringConst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,19 +8,23 @@
 
 #import "DutchMonkeyViewController.h"
 #import "Monkey.h"
+#import "DoughnutView.h"
+
+
+static NSUInteger kNumberOfPages = 5;
 
 @interface DutchMonkeyViewController()
 -(void)dispatchFirstTouchAtPoint:(CGPoint)touchPoint forEvent:(UIEvent *)event;
 -(void)dispatchTouchEvent:(UIView *)theView toPosition:(CGPoint)position;
 -(void)dispatchTouchEndEvent:(UIView *)theView toPosition:(CGPoint)position;
+- (void)loadScrollViewWithPage:(int)page;
+- (void)scrollViewDidScroll:(UIScrollView *)sender;
 @end	
 
 
 @implementation DutchMonkeyViewController
-
-
-@synthesize m_monkey;
-@synthesize monkeyHead, monkeyRightLeg, monkeyLeftLeg, monkeyRightArm, monkeyLeftArm, monkeyTail, gameTimer;
+@synthesize scrollView, viewControllers, m_monkey, monkeyHead, monkeyRightArm, monkeyLeftArm, monkeyRightLeg,monkeyLeftLeg,monkeyTail,monkeyBelly;
+@synthesize gameTimer;
 
 CGPoint firstPoint;
 CGPoint lastPoint;
@@ -303,13 +307,13 @@ typedef enum BodyPart{
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSLog(@"Touches Moved");
-	NSUInteger touchCount = 0;
+	/*NSUInteger touchCount = 0;
 	// Enumerates through all touch objects
 	for (UITouch *touch in touches) {
 		// Send to the dispatch method, which will make sure the appropriate subview is acted upon
 		[self dispatchTouchEvent:[touch view] toPosition:[touch locationInView:self.view]];
 		touchCount++;
-	}
+	}*/
 }
 // Handles the end of a touch event.
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -325,111 +329,121 @@ typedef enum BodyPart{
 }
 
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
+-(IBAction) button1Down:(id)sender{
+	[m_monkey startWalk];
 }
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
+-(IBAction) BellyTouch:(id) sender{
+	[m_monkey startWalk];
 }
-*/
 
 -(void)gameloop{
 	[m_monkey gameloop];
 	
-	/*if(headAngle > 0.25)
-		headAngleIncrement = -0.01;
-	
-	if(headAngle < -0.25)
-		headAngleIncrement = 0.01;
-	headAngle += headAngleIncrement;
-	
-	if(footRAngle > 0.3)
-		footRAngleIncrement = -0.02;
-	
-	if(footRAngle < -0.3)
-		footRAngleIncrement = 0.02;
-	
-	footRAngle +=footRAngleIncrement;
-	
-	if(footLAngle > 0.3)
-		footLAngleIncrement = -0.02;
-	
-	if(footLAngle < -0.3)
-		footLAngleIncrement = 0.02;
-	
-	footLAngle +=footLAngleIncrement;
-	
-	
-	///
-	if(armRAngle > 0.3)
-		armRAngleIncrement = -0.02;
-	
-	if(armRAngle < -0.3)
-		armRAngleIncrement = 0.02;
-	
-	armRAngle +=armRAngleIncrement;
-	
-	if(armLAngle > 0.3)
-		armLAngleIncrement = -0.02;
-	
-	if(armLAngle < -0.3)
-		armLAngleIncrement = 0.02;
-	
-	armLAngle +=armLAngleIncrement;
-
-	
-	if(tailAngle < -0.3)
-		tailAngleIncrement = 0.02;
-	
-	if(tailAngle > 0.3)
-		tailAngleIncrement = -
-		0.02;
-	
-	tailAngle +=tailAngleIncrement;
-	
-	
-	monkeyTail.transform = CGAffineTransformIdentity;
-	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,TAIL_PIVOT[0],TAIL_PIVOT[1]);
-	monkeyTail.transform = CGAffineTransformRotate(monkeyTail.transform, tailAngle);
-	monkeyTail.transform = CGAffineTransformTranslate(monkeyTail.transform,-TAIL_PIVOT[0],-TAIL_PIVOT[1]);
-
-	monkeyHead.transform = CGAffineTransformIdentity;
-	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,HEAD_PIVOT[0],HEAD_PIVOT[1]);
-	monkeyHead.transform = CGAffineTransformRotate(monkeyHead.transform, headAngle);
-	monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,-HEAD_PIVOT[0],-HEAD_PIVOT[1]);
-	monkeyRightLeg.transform = CGAffineTransformIdentity;
-	monkeyRightLeg.transform = CGAffineTransformTranslate(monkeyRightLeg.transform,LEGR_PIVOT[0],LEGR_PIVOT[1]);
-	monkeyRightLeg.transform = CGAffineTransformRotate(monkeyRightLeg.transform, footRAngle);
-	monkeyRightLeg.transform = CGAffineTransformTranslate(monkeyRightLeg.transform,-LEGR_PIVOT[0],-LEGR_PIVOT[1]);
-	
-	monkeyLeftLeg.transform = CGAffineTransformIdentity;
-	monkeyLeftLeg.transform = CGAffineTransformTranslate(monkeyLeftLeg.transform,LEGL_PIVOT[0],LEGL_PIVOT[1]);
-	monkeyLeftLeg.transform = CGAffineTransformRotate(monkeyLeftLeg.transform, footLAngle);
-	monkeyLeftLeg.transform = CGAffineTransformTranslate(monkeyLeftLeg.transform,-LEGL_PIVOT[0],-LEGL_PIVOT[1]);
-	
-	
-	monkeyRightArm.transform = CGAffineTransformIdentity;
-	monkeyRightArm.transform = CGAffineTransformTranslate(monkeyRightArm.transform,ARMR_PIVOT[0],ARMR_PIVOT[1]);
-	monkeyRightArm.transform = CGAffineTransformRotate(monkeyRightArm.transform, armRAngle);
-	monkeyRightArm.transform = CGAffineTransformTranslate(monkeyRightArm.transform,-ARMR_PIVOT[0],-ARMR_PIVOT[1]);
-	
-	monkeyLeftArm.transform = CGAffineTransformIdentity;
-	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,ARML_PIVOT[0],ARML_PIVOT[1]);
-	monkeyLeftArm.transform = CGAffineTransformRotate(monkeyLeftArm.transform, armLAngle);
-	monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,-ARML_PIVOT[0],-ARML_PIVOT[1]);
-*/	
-	
+		
 	
 }
+- (void)loadScrollViewWithPage:(int)page {
+    if (page < 0) return;
+    if (page >= kNumberOfPages) return;
+	
+    // replace the placeholder if necessary
+    DoughnutView *controller = [viewControllers objectAtIndex:page];
+    if ((NSNull *)controller == [NSNull null]) {
+        controller = [[DoughnutView alloc] initWithPageNumber:page];
+        [viewControllers replaceObjectAtIndex:page withObject:controller];
+        [controller release];
+    }
+	else {
+		[controller setDoughnut:page];
+		
+		
+	}
+	
+	if(nil == controller.view)
+	{
+		int debug = 0;
+	}
+	
+    // add the controller's view to the scroll view
+    if (nil == controller.view.superview) {
+        CGRect frame = scrollView.frame;
+        //frame.origin.x = frame.size.width * page;
+        //frame.origin.y = 0;
+		frame.origin.x=  0;
+		frame.origin.y  = (frame.size.height) * page;
+        controller.view.frame = frame;
+        [scrollView addSubview:controller.view];
+    }
+}
 
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    // We don't want a "feedback loop" between the UIPageControl and the scroll delegate in
+    // which a scroll event generated from the user hitting the page control triggers updates from
+    // the delegate method. We use a boolean to disable the delegate logic when the page control is used.
+    if (pageControlUsed) {
+        // do nothing - the scroll was initiated from the page control, not the user dragging
+        return;
+    }
+	
+    // Switch the indicator when more than 50% of the previous/next page is visible
+    //CGFloat pageWidth = scrollView.frame.size.width;
+    //int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+	//pageControl.currentPage = page;
+	
+	
+	CGFloat pageHeight = scrollView.frame.size.height;
+	int page = floor((scrollView.contentOffset.y - pageHeight / 2) / pageHeight) +1;
+	pageControl.currentPage = page;
+	
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+	
+    // A possible optimization would be to unload the views+controllers which are no longer visible
+}
+
+// At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    pageControlUsed = NO;
+}
+
+// At the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    pageControlUsed = NO;
+}
+
+- (IBAction)changePage:(id)sender {
+    int page = pageControl.currentPage;
+	
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    [self loadScrollViewWithPage:page - 1];
+    [self loadScrollViewWithPage:page];
+    [self loadScrollViewWithPage:page + 1];
+    
+	// update the scroll view to the appropriate page
+    CGRect frame = scrollView.frame;
+    //frame.origin.x = frame.size.width * page;
+    //frame.origin.y = 0;
+    frame.origin.y = frame.size.height * page;
+	frame.origin.x = 0;
+	[scrollView scrollRectToVisible:frame animated:YES];
+    
+	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
+    pageControlUsed = YES;
+}
+
+
+-(void) viewWillAppear:(BOOL)animated{
+	pageControl.numberOfPages = kNumberOfPages;
+    pageControl.currentPage = 0;
+	
+    // pages are created on demand
+    // load the visible page
+    // load the page on either side to avoid flashes when the user starts scrolling
+    [self loadScrollViewWithPage:0];
+    [self loadScrollViewWithPage:1];
+}
 // Implement viewDidLoad to do  additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -441,12 +455,37 @@ typedef enum BodyPart{
 	m_monkey.monkeyLeftLeg = monkeyLeftLeg;
 	m_monkey.monkeyRightLeg = monkeyRightLeg;
 	m_monkey.monkeyTail = monkeyTail;
+	m_monkey.monkeyBelly = monkeyBelly;
 	firstPoint.x = -1;
+	
+	
+	//paging stuff
+	// view controllers are created lazily
+    // in the meantime, load the array with placeholders which will be replaced on demand
+    NSMutableArray *controllers = [[NSMutableArray alloc] init];
+    for (unsigned i = 0; i < kNumberOfPages; i++) {
+        [controllers addObject:[NSNull null]];
+    }
+    self.viewControllers = controllers;
+    [controllers release];
+	
+    // a page is the width of the scroll view
+    scrollView.pagingEnabled = YES;
+	NSLog(@"Scroll Size %d", scrollView.frame.size.width);
+	//scrollView.contentSize = CGSizeMake(267 * kNumberOfPages, 200);
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, (scrollView.frame.size.height) * kNumberOfPages);
+	scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.scrollsToTop = NO;
+    scrollView.delegate = self;
+	
 	
 	gameTimer = [[NSTimer scheduledTimerWithTimeInterval:.025 target:self selector:@selector(gameloop) userInfo:nil repeats:YES] retain];
 	
 
 }
+
+
 
 
 

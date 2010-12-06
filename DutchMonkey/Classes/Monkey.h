@@ -16,6 +16,7 @@
 	IBOutlet UIImageView *monkeyRightLeg;
 	IBOutlet UIImageView *monkeyLeftLeg;
 	IBOutlet UIImageView *monkeyTail;
+	IBOutlet UIButton *monkeyBelly;
 	double headAngle;
 	double headAngleIncrement;
 	double tailAngle;// = 0;
@@ -31,11 +32,16 @@
 	double armLAngle;// = 0;
 	double armLAngleIncrement;// = 0.02;
 	
+	double introAnimationFrame;
+	double walkAnimationFrame;
+	
+	
 	
 }
 
 -(void)gameloop;
 -(id) init;
+-(void)startWalk;
 
 @property (nonatomic, retain) UIImageView *monkeyHead;
 @property (nonatomic, retain) UIImageView *monkeyRightArm;
@@ -43,6 +49,7 @@
 @property (nonatomic, retain) UIImageView *monkeyRightLeg;
 @property (nonatomic, retain) UIImageView *monkeyLeftLeg;
 @property (nonatomic, retain) UIImageView *monkeyTail;
+@property (nonatomic, retain) UIButton *monkeyBelly;
 
 @property (nonatomic, assign) double headAngle;
 @property (nonatomic, assign) double headAngleIncrement;
@@ -61,6 +68,9 @@
 
 @property (nonatomic, assign) double armLAngle;
 @property (nonatomic, assign) double armLAngleIncrement;
+
+@property (nonatomic, assign) double introAnimationFrame;
+
 
 
 @end
