@@ -10,10 +10,10 @@
 
 @implementation Monkey
 
-@synthesize monkeyHead, monkeyRightArm, monkeyLeftArm, monkeyRightLeg, monkeyLeftLeg, monkeyTail,monkeyBelly; 
+@synthesize monkeyHead, monkeyRightArm, monkeyLeftArm, monkeyRightLeg, monkeyLeftLeg, monkeyTail,monkeyBelly, doughnut; 
 @synthesize headAngle, headAngleIncrement, footRAngle,footRAngleIncrement, footLAngle,footLAngleIncrement;
 @synthesize armRAngle,armRAngleIncrement, armLAngle,armLAngleIncrement, tailAngle, tailAngleIncrement;
-@synthesize introAnimationFrame;
+@synthesize introAnimationFrame, eatAnimationFrame;
 
 int M_HEAD_PIVOT [] = {0,30};
 int M_ARMR_PIVOT [] = {-22,-45};
@@ -27,6 +27,10 @@ int M_TAIL_PIVOT [] = {-60,0};
 
 -(void)startWalk{
 	walkAnimationFrame = 100;
+}
+
+-(void)startEating{
+	eatAnimationFrame = 100;
 }
 
 -(void) incrementAngles{
@@ -155,10 +159,21 @@ int M_TAIL_PIVOT [] = {-60,0};
 		walkAnimationFrame --;
 		
 	}		
+	
+	if(eatAnimationFrame > 0)
+	{
+		doughnut.hidden = NO;
+		eatAnimationFrame --;
+	}
+	else {
+		doughnut.hidden = YES;
+	}
+
 }
 
 -(id) init{
 	if(self = [super init]){
+		
 		headAngle = 0;
 		headAngleIncrement = 0.01;
 		
@@ -176,14 +191,17 @@ int M_TAIL_PIVOT [] = {-60,0};
 		armLAngleIncrement = 0.02;
 		
 		introAnimationFrame = 100;
+		eatAnimationFrame = 0;
 		
 		
 		monkeyHead.transform = CGAffineTransformIdentity;
 		monkeyHead.transform = CGAffineTransformTranslate(monkeyHead.transform,-20,0);
+		
 		[self startWalk];
 		
 		
 	}
+	
 	return self;
 }
 

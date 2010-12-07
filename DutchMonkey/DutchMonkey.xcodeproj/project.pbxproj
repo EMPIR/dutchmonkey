@@ -27,6 +27,10 @@
 		2720F6B812AC8AAA000D9CB9 /* StringConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2720F6B712AC8AAA000D9CB9 /* StringConst.m */; };
 		2720F70212AC9303000D9CB9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F70012AC9303000D9CB9 /* Icon.png */; };
 		2720F70312AC9303000D9CB9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2720F70112AC9303000D9CB9 /* Icon@2x.png */; };
+		273EB6C012ADD99E00D6A9B6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 273EB6BE12ADD99E00D6A9B6 /* Default.png */; };
+		273EB6C112ADD99E00D6A9B6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273EB6BF12ADD99E00D6A9B6 /* Default@2x.png */; };
+		273EB6C712ADDB1C00D6A9B6 /* Title.png in Resources */ = {isa = PBXBuildFile; fileRef = 273EB6C512ADDB1C00D6A9B6 /* Title.png */; };
+		273EB6C812ADDB1C00D6A9B6 /* Title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 273EB6C612ADDB1C00D6A9B6 /* Title@2x.png */; };
 		277E4EE81298B8C4006F38B0 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE61298B8C4006F38B0 /* background.jpg */; };
 		277E4EE91298B8C4006F38B0 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 277E4EE71298B8C4006F38B0 /* background@2x.jpg */; };
 		27F9B14B129387A5001A1F03 /* Tail.png in Resources */ = {isa = PBXBuildFile; fileRef = 27F9B13D129387A5001A1F03 /* Tail.png */; };
@@ -74,6 +78,10 @@
 		2720F6B712AC8AAA000D9CB9 /* StringConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringConst.m; sourceTree = "<group>"; };
 		2720F70012AC9303000D9CB9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = media_iphone/Icon.png; sourceTree = "<group>"; };
 		2720F70112AC9303000D9CB9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "media_iphone/Icon@2x.png"; sourceTree = "<group>"; };
+		273EB6BE12ADD99E00D6A9B6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = media_iphone/Default.png; sourceTree = "<group>"; };
+		273EB6BF12ADD99E00D6A9B6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "media_iphone/Default@2x.png"; sourceTree = "<group>"; };
+		273EB6C512ADDB1C00D6A9B6 /* Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Title.png; path = media_iphone/Title.png; sourceTree = "<group>"; };
+		273EB6C612ADDB1C00D6A9B6 /* Title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Title@2x.png"; path = "media_iphone/Title@2x.png"; sourceTree = "<group>"; };
 		277E4EE61298B8C4006F38B0 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = media_iphone/background.jpg; sourceTree = "<group>"; };
 		277E4EE71298B8C4006F38B0 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background@2x.jpg"; path = "media_iphone/background@2x.jpg"; sourceTree = "<group>"; };
 		27F9B13D129387A5001A1F03 /* Tail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tail.png; path = media_iphone/Tail.png; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 		27F9B13C1293873A001A1F03 /* media_iphone */ = {
 			isa = PBXGroup;
 			children = (
+				273EB6C512ADDB1C00D6A9B6 /* Title.png */,
+				273EB6C612ADDB1C00D6A9B6 /* Title@2x.png */,
+				273EB6BE12ADD99E00D6A9B6 /* Default.png */,
+				273EB6BF12ADD99E00D6A9B6 /* Default@2x.png */,
 				2720F70012AC9303000D9CB9 /* Icon.png */,
 				2720F70112AC9303000D9CB9 /* Icon@2x.png */,
 				2720F60412AC7CE6000D9CB9 /* ChocolateIcedSpinkles.png */,
@@ -198,8 +210,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2720F5CE12AC7905000D9CB9 /* DoughnutView.xib */,
 				27F9B13C1293873A001A1F03 /* media_iphone */,
+				2720F5CE12AC7905000D9CB9 /* DoughnutView.xib */,
 				2899E5210DE3E06400AC0155 /* DutchMonkeyViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* DutchMonkey-Info.plist */,
@@ -297,6 +309,10 @@
 				2720F60D12AC7CE6000D9CB9 /* MapleBars.png in Resources */,
 				2720F70212AC9303000D9CB9 /* Icon.png in Resources */,
 				2720F70312AC9303000D9CB9 /* Icon@2x.png in Resources */,
+				273EB6C012ADD99E00D6A9B6 /* Default.png in Resources */,
+				273EB6C112ADD99E00D6A9B6 /* Default@2x.png in Resources */,
+				273EB6C712ADDB1C00D6A9B6 /* Title.png in Resources */,
+				273EB6C812ADDB1C00D6A9B6 /* Title@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +346,7 @@
 				GCC_PREFIX_HEADER = DutchMonkey_Prefix.pch;
 				INFOPLIST_FILE = "DutchMonkey-Info.plist";
 				PRODUCT_NAME = DutchMonkey;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -342,6 +359,7 @@
 				GCC_PREFIX_HEADER = DutchMonkey_Prefix.pch;
 				INFOPLIST_FILE = "DutchMonkey-Info.plist";
 				PRODUCT_NAME = DutchMonkey;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -355,7 +373,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
 		};
@@ -369,7 +387,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Release;
 		};

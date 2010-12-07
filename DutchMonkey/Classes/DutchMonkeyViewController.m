@@ -17,14 +17,14 @@ static NSUInteger kNumberOfPages = 5;
 -(void)dispatchFirstTouchAtPoint:(CGPoint)touchPoint forEvent:(UIEvent *)event;
 -(void)dispatchTouchEvent:(UIView *)theView toPosition:(CGPoint)position;
 -(void)dispatchTouchEndEvent:(UIView *)theView toPosition:(CGPoint)position;
-- (void)loadScrollViewWithPage:(int)page;
-- (void)scrollViewDidScroll:(UIScrollView *)sender;
+-(void)loadScrollViewWithPage:(int)page;
+-(void)scrollViewDidScroll:(UIScrollView *)sender;
 @end	
 
 
 @implementation DutchMonkeyViewController
 @synthesize scrollView, viewControllers, m_monkey, monkeyHead, monkeyRightArm, monkeyLeftArm, monkeyRightLeg,monkeyLeftLeg,monkeyTail,monkeyBelly;
-@synthesize gameTimer;
+@synthesize gameTimer, doughnut;
 
 CGPoint firstPoint;
 CGPoint lastPoint;
@@ -333,7 +333,8 @@ typedef enum BodyPart{
 	[m_monkey startWalk];
 }
 -(IBAction) BellyTouch:(id) sender{
-	[m_monkey startWalk];
+	//[m_monkey startWalk];
+	[m_monkey startEating];
 }
 
 -(void)gameloop{
@@ -456,6 +457,8 @@ typedef enum BodyPart{
 	m_monkey.monkeyRightLeg = monkeyRightLeg;
 	m_monkey.monkeyTail = monkeyTail;
 	m_monkey.monkeyBelly = monkeyBelly;
+	m_monkey.doughnut = doughnut;
+	doughnut.hidden = YES;
 	firstPoint.x = -1;
 	
 	
@@ -475,10 +478,10 @@ typedef enum BodyPart{
 	//scrollView.contentSize = CGSizeMake(267 * kNumberOfPages, 200);
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, (scrollView.frame.size.height) * kNumberOfPages);
 	scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = YES;
     scrollView.scrollsToTop = NO;
     scrollView.delegate = self;
-	
+	//scrollView.canCancelContentTouches = NO;
 	
 	gameTimer = [[NSTimer scheduledTimerWithTimeInterval:.025 target:self selector:@selector(gameloop) userInfo:nil repeats:YES] retain];
 	

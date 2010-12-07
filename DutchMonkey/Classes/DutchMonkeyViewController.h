@@ -18,7 +18,9 @@
 	IBOutlet UIImageView *monkeyRightLeg;
 	IBOutlet UIImageView *monkeyLeftLeg;
 	IBOutlet UIImageView *monkeyTail;
+	IBOutlet UIImageView *doughnut;
 	IBOutlet UIButton *monkeyBelly;
+	
 	NSTimer *gameTimer;
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
@@ -46,6 +48,7 @@
 @property (nonatomic, retain) UIImageView *monkeyLeftLeg;
 @property (nonatomic, retain) UIImageView *monkeyTail;
 @property (nonatomic, retain) UIButton *monkeyBelly;
+@property (nonatomic, retain) UIImageView *doughnut;
 @property (nonatomic,retain) NSTimer *gameTimer;
 
 @end
