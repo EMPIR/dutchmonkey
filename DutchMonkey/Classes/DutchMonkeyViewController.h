@@ -21,6 +21,12 @@
 	IBOutlet UIImageView *doughnut;
 	IBOutlet UIButton *monkeyBelly;
 	
+	IBOutlet UIImageView *doughnut1;
+	IBOutlet UIImageView *doughnut2;
+	IBOutlet UIImageView *doughnut3;
+	IBOutlet UIImageView *doughnut4;
+	IBOutlet UIImageView *doughnut5;
+	
 	NSTimer *gameTimer;
 	UIScrollView *scrollView;
 	UIPageControl *pageControl;
@@ -39,6 +45,8 @@
 
 -(IBAction) BellyTouch:(id) sender;
 -(IBAction) button1Down:(id)sender;
+//-(IBAction) doughnutTouch:(id)sender;
+//-(IBAction) doughnutDrag:(id)sender;
 
 @property (nonatomic, retain) Monkey *m_monkey;
 @property (nonatomic, retain) UIImageView *monkeyHead;
@@ -49,7 +57,14 @@
 @property (nonatomic, retain) UIImageView *monkeyTail;
 @property (nonatomic, retain) UIButton *monkeyBelly;
 @property (nonatomic, retain) UIImageView *doughnut;
-@property (nonatomic,retain) NSTimer *gameTimer;
+@property (nonatomic,retain)  NSTimer *gameTimer;
+
+@property (nonatomic, retain) UIImageView *doughnut1;
+@property (nonatomic, retain) UIImageView *doughnut2;
+@property (nonatomic, retain) UIImageView *doughnut3;
+@property (nonatomic, retain) UIImageView *doughnut4;
+@property (nonatomic, retain) UIImageView *doughnut5;
+
 
 @end
 

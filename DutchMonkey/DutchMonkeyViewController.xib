@@ -55,18 +55,6 @@
 							<string key="NSResourceName">background.jpg</string>
 						</object>
 					</object>
-					<object class="IBUIScrollView" id="288048038">
-						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">1292</int>
-						<string key="NSFrame">{{286, 0}, {480, 320}}</string>
-						<reference key="NSSuperview" ref="774585933"/>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<float key="IBUIScaleFactor">2</float>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<bool key="IBUIPagingEnabled">YES</bool>
-						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
-					</object>
 					<object class="IBUIImageView" id="703453588">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">1316</int>
@@ -199,9 +187,71 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<float key="IBUIScaleFactor">2</float>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
+						<object class="NSCustomResource" key="IBUIImage" id="395562942">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">ChocolateIcedSpinkles.png</string>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="435071005">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">1316</int>
+						<string key="NSFrame">{{291, 48}, {75, 75}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<float key="IBUIScaleFactor">2</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<reference key="IBUIImage" ref="395562942"/>
+					</object>
+					<object class="IBUIImageView" id="435783879">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">1316</int>
+						<string key="NSFrame">{{291, 134}, {75, 75}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<float key="IBUIScaleFactor">2</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">MapleBars.png</string>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="585709907">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">1316</int>
+						<string key="NSFrame">{{291, 224}, {75, 75}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<float key="IBUIScaleFactor">2</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">JalapenoCheddarSpirals.png</string>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="1047549784">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">1316</int>
+						<string key="NSFrame">{{389, 179}, {75, 75}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<float key="IBUIScaleFactor">2</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DutchApple.png</string>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="1041272954">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">1316</int>
+						<string key="NSFrame">{{389, 89}, {75, 75}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<float key="IBUIScaleFactor">2</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">DutchMonkey.png</string>
 						</object>
 					</object>
 				</object>
@@ -300,19 +350,51 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">scrollView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="288048038"/>
-					</object>
-					<int key="connectionID">30</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">doughnut</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="478832104"/>
 					</object>
 					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">doughnut1</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="435071005"/>
+					</object>
+					<int key="connectionID">79</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">doughnut2</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1041272954"/>
+					</object>
+					<int key="connectionID">80</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">doughnut3</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="435783879"/>
+					</object>
+					<int key="connectionID">81</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">doughnut4</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1047549784"/>
+					</object>
+					<int key="connectionID">82</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">doughnut5</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="585709907"/>
+					</object>
+					<int key="connectionID">83</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -348,9 +430,13 @@
 							<reference ref="703453588"/>
 							<reference ref="991565559"/>
 							<reference ref="1020317045"/>
-							<reference ref="288048038"/>
-							<reference ref="298816745"/>
 							<reference ref="478832104"/>
+							<reference ref="298816745"/>
+							<reference ref="435071005"/>
+							<reference ref="435783879"/>
+							<reference ref="585709907"/>
+							<reference ref="1047549784"/>
+							<reference ref="1041272954"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -395,11 +481,8 @@
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">29</int>
-						<reference key="object" ref="288048038"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-						</object>
+						<int key="objectID">32</int>
+						<reference key="object" ref="478832104"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -408,8 +491,28 @@
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">32</int>
-						<reference key="object" ref="478832104"/>
+						<int key="objectID">74</int>
+						<reference key="object" ref="435071005"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">75</int>
+						<reference key="object" ref="435783879"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">76</int>
+						<reference key="object" ref="585709907"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">77</int>
+						<reference key="object" ref="1047549784"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">78</int>
+						<reference key="object" ref="1041272954"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</object>
@@ -434,14 +537,22 @@
 					<string>21.IBViewBoundsToFrameTransform</string>
 					<string>26.IBPluginDependency</string>
 					<string>26.IBViewBoundsToFrameTransform</string>
-					<string>29.IBPluginDependency</string>
-					<string>29.IBViewBoundsToFrameTransform</string>
 					<string>31.IBPluginDependency</string>
 					<string>31.IBViewBoundsToFrameTransform</string>
 					<string>32.IBPluginDependency</string>
 					<string>32.IBViewBoundsToFrameTransform</string>
 					<string>6.IBEditorWindowLastContentRect</string>
 					<string>6.IBPluginDependency</string>
+					<string>74.IBPluginDependency</string>
+					<string>74.IBViewBoundsToFrameTransform</string>
+					<string>75.IBPluginDependency</string>
+					<string>75.IBViewBoundsToFrameTransform</string>
+					<string>76.IBPluginDependency</string>
+					<string>76.IBViewBoundsToFrameTransform</string>
+					<string>77.IBPluginDependency</string>
+					<string>77.IBViewBoundsToFrameTransform</string>
+					<string>78.IBPluginDependency</string>
+					<string>78.IBViewBoundsToFrameTransform</string>
 					<string>9.IBPluginDependency</string>
 					<string>9.IBViewBoundsToFrameTransform</string>
 				</object>
@@ -479,21 +590,37 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDcAAAw5UAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBIAAAwjAAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">AcOKAABAgAAAA</bytes>
+						<bytes key="NSTransformStruct">AUIoAABDVAAAA</bytes>
 					</object>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABCigAAw4UAAA</bytes>
-					</object>
-					<string>{{75, 46}, {960, 644}}</string>
+					<string>{{90, 125}, {960, 644}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">AUGwAAAAAAAAA</bytes>
+						<bytes key="NSTransformStruct">AUORgABCQAAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">AUORgABDBgAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">AUORgABDYAAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">AUPCgABDMwAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">P4AAAL+AAABDw8AAw36AAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">AUGwAABCQAAAA</bytes>
 					</object>
 				</object>
 			</object>
@@ -513,7 +640,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">33</int>
+			<int key="maxID">83</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -565,6 +692,11 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>doughnut</string>
+							<string>doughnut1</string>
+							<string>doughnut2</string>
+							<string>doughnut3</string>
+							<string>doughnut4</string>
+							<string>doughnut5</string>
 							<string>monkeyBelly</string>
 							<string>monkeyHead</string>
 							<string>monkeyLeftArm</string>
@@ -576,6 +708,11 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
+							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UIButton</string>
 							<string>UIImageView</string>
@@ -592,6 +729,11 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>doughnut</string>
+							<string>doughnut1</string>
+							<string>doughnut2</string>
+							<string>doughnut3</string>
+							<string>doughnut4</string>
+							<string>doughnut5</string>
 							<string>monkeyBelly</string>
 							<string>monkeyHead</string>
 							<string>monkeyLeftArm</string>
@@ -605,6 +747,26 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">doughnut</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">doughnut1</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">doughnut2</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">doughnut3</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">doughnut4</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">doughnut5</string>
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
@@ -872,9 +1034,13 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>Belly.png</string>
 				<string>ChocolateIcedSpinkles.png</string>
+				<string>DutchApple.png</string>
+				<string>DutchMonkey.png</string>
 				<string>Head.png</string>
+				<string>JalapenoCheddarSpirals.png</string>
 				<string>LeftArm.png</string>
 				<string>LeftLeg.png</string>
+				<string>MapleBars.png</string>
 				<string>RightArm.png</string>
 				<string>RightLeg.png</string>
 				<string>Tail.png</string>
@@ -885,9 +1051,13 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{84, 110}</string>
 				<string>{156, 132}</string>
+				<string>{163, 146}</string>
+				<string>{155, 150}</string>
 				<string>{200, 114}</string>
+				<string>{163, 124}</string>
 				<string>{42, 94}</string>
 				<string>{52, 78}</string>
+				<string>{165, 196}</string>
 				<string>{45, 92}</string>
 				<string>{49, 74}</string>
 				<string>{127, 120}</string>

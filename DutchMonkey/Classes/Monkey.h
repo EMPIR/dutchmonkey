@@ -18,6 +18,7 @@
 	IBOutlet UIImageView *monkeyTail;
 	IBOutlet UIButton *monkeyBelly;
 	IBOutlet UIImageView *doughnut;
+
 	double headAngle;
 	double headAngleIncrement;
 	double tailAngle;// = 0;

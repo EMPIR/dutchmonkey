@@ -25,6 +25,7 @@ static NSUInteger kNumberOfPages = 5;
 @implementation DutchMonkeyViewController
 @synthesize scrollView, viewControllers, m_monkey, monkeyHead, monkeyRightArm, monkeyLeftArm, monkeyRightLeg,monkeyLeftLeg,monkeyTail,monkeyBelly;
 @synthesize gameTimer, doughnut;
+@synthesize doughnut1, doughnut2, doughnut3, doughnut4, doughnut5;
 
 CGPoint firstPoint;
 CGPoint lastPoint;
@@ -191,7 +192,23 @@ typedef enum BodyPart{
 	
 	UIImageView *imgView2 = NULL;
 	//NSLog(@"dispatchTouchEvent");
-	if (CGRectContainsPoint([monkeyHead frame], position)) {
+	if(CGRectContainsPoint([doughnut1 frame],position)){
+		[doughnut1 setCenter:position];
+	}
+	else if(CGRectContainsPoint([doughnut2 frame],position)){
+		[doughnut2 setCenter:position];
+	}
+	else if(CGRectContainsPoint([doughnut3 frame],position)){
+		[doughnut3 setCenter:position];
+	}
+	else if(CGRectContainsPoint([doughnut4 frame],position)){
+		[doughnut4 setCenter:position];
+	}
+	else if(CGRectContainsPoint([doughnut5 frame],position)){
+		[doughnut5 setCenter:position];
+	}
+	
+	/*if (CGRectContainsPoint([monkeyHead frame], position)) {
 		imgView2 = monkeyHead;
 		bodypart2 = 0;
 		rect2 = monkeyHead.frame;
@@ -258,10 +275,60 @@ typedef enum BodyPart{
 			imgView.transform = CGAffineTransformTranslate(imgView.transform,translatePivot.x,translatePivot.y);
 			imgView.transform = CGAffineTransformRotate(imgView.transform, angle);
 			imgView.transform = CGAffineTransformTranslate(imgView.transform,-translatePivot.x,-translatePivot.y);		}
-	}
+	}*/
 	 
 	
 }
+
+-(IBAction) doughnutTouch:(id)sender{
+	
+	if(sender == doughnut1)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut2)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut3)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut4)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut5)
+	{
+		int debug = 0;
+	}
+}
+
+/*-(IBAction) doughnutDrag:(id)sender{
+	
+	if(sender == doughnut1)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut2)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut3)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut4)
+	{
+		int debug = 0;
+	}
+	else if(sender == doughnut5)
+	{
+		int debug = 0;
+	}
+}*/
+
+
 
 // Checks to see which view, or views,  the point is in and then calls a method to perform the closing animation,
 // which is to return the piece to its original size, as if it is being put down by the user.
@@ -307,13 +374,13 @@ typedef enum BodyPart{
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//NSLog(@"Touches Moved");
-	/*NSUInteger touchCount = 0;
+	NSUInteger touchCount = 0;
 	// Enumerates through all touch objects
 	for (UITouch *touch in touches) {
 		// Send to the dispatch method, which will make sure the appropriate subview is acted upon
 		[self dispatchTouchEvent:[touch view] toPosition:[touch locationInView:self.view]];
 		touchCount++;
-	}*/
+	}
 }
 // Handles the end of a touch event.
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -459,9 +526,11 @@ typedef enum BodyPart{
 	m_monkey.monkeyBelly = monkeyBelly;
 	m_monkey.doughnut = doughnut;
 	doughnut.hidden = YES;
+	doughnut1.hidden = NO;
 	firstPoint.x = -1;
 	
 	
+	/*
 	//paging stuff
 	// view controllers are created lazily
     // in the meantime, load the array with placeholders which will be replaced on demand
@@ -482,7 +551,7 @@ typedef enum BodyPart{
     scrollView.scrollsToTop = NO;
     scrollView.delegate = self;
 	//scrollView.canCancelContentTouches = NO;
-	
+	*/
 	gameTimer = [[NSTimer scheduledTimerWithTimeInterval:.025 target:self selector:@selector(gameloop) userInfo:nil repeats:YES] retain];
 	
 

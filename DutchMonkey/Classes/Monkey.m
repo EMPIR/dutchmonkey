@@ -163,6 +163,15 @@ int M_TAIL_PIVOT [] = {-60,0};
 	if(eatAnimationFrame > 0)
 	{
 		doughnut.hidden = NO;
+		[self incrementAngles];
+		monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,M_ARML_PIVOT[0],M_ARML_PIVOT[1]);
+		monkeyLeftArm.transform = CGAffineTransformRotate(monkeyLeftArm.transform, armLAngle);
+		monkeyLeftArm.transform = CGAffineTransformTranslate(monkeyLeftArm.transform,-M_ARML_PIVOT[0],-M_ARML_PIVOT[1]);
+		
+		doughnut.transform = CGAffineTransformTranslate(doughnut.transform,M_ARML_PIVOT[0],M_ARML_PIVOT[1]);
+		doughnut.transform = CGAffineTransformRotate(doughnut.transform, armLAngle);
+		doughnut.transform = CGAffineTransformTranslate(doughnut.transform,-M_ARML_PIVOT[0],-M_ARML_PIVOT[1]);
+		
 		eatAnimationFrame --;
 	}
 	else {
