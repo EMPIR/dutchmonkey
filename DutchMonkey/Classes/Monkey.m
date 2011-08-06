@@ -29,8 +29,10 @@ int M_TAIL_PIVOT [] = {-60,0};
 	walkAnimationFrame = 100;
 }
 
--(void)startEating{
+-(void)startEating:(UIImageView *) imgView{
 	eatAnimationFrame = 100;
+	//imgView.transform = doughnut.transform;
+    doughnut = imgView;
 }
 
 -(void) incrementAngles{
@@ -175,7 +177,7 @@ int M_TAIL_PIVOT [] = {-60,0};
 		eatAnimationFrame --;
 	}
 	else {
-		doughnut.hidden = YES;
+		//doughnut.hidden = YES;
 	}
 
 }

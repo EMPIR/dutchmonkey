@@ -45,7 +45,7 @@
 -(void)gameloop;
 -(id) init;
 -(void)startWalk;
--(void)startEating;
+-(void)startEating:(UIImageView *)doughnut;
 
 @property (nonatomic, retain) UIImageView *monkeyHead;
 @property (nonatomic, retain) UIImageView *monkeyRightArm;

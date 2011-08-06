@@ -35,6 +35,8 @@ int bodypart;
 CGPoint translatePivot;
 CGRect rect;
 
+UIImageView *imgView2 = NULL;
+
 //double headAngle = 0;
 //double headAngleIncrement = 0.01;
 
@@ -58,6 +60,7 @@ const int ARML_PIVOT [] = {21,-47};
 const int LEGR_PIVOT [] = {-24,-20};
 const int LEGL_PIVOT [] = {24,-20};
 const int TAIL_PIVOT [] = {-60,0};
+
 
 
 /*
@@ -190,23 +193,43 @@ typedef enum BodyPart{
 	int bodypart2 = 0;
 	CGRect rect2;
 	
-	UIImageView *imgView2 = NULL;
+	
 	//NSLog(@"dispatchTouchEvent");
-	if(CGRectContainsPoint([doughnut1 frame],position)){
-		[doughnut1 setCenter:position];
+	
+	if(imgView2 == NULL)
+	{
+		if(CGRectContainsPoint([doughnut1 frame],position)){
+			
+			imgView2 = doughnut1;
+		}
+		else if(CGRectContainsPoint([doughnut2 frame],position)){
+			//[doughnut2 setCenter:position];
+			imgView2 = doughnut2;
+		}
+		else if(CGRectContainsPoint([doughnut3 frame],position)){
+			//[doughnut3 setCenter:position];
+			imgView2 = doughnut3;
+		}
+		else if(CGRectContainsPoint([doughnut4 frame],position)){
+			//[doughnut4 setCenter:position];
+			imgView2 = doughnut4;
+		}
+		else 	if(CGRectContainsPoint([doughnut5 frame],position)){
+			//[doughnut5 setCenter:position];
+			imgView2 = doughnut5;
+		}
 	}
-	else if(CGRectContainsPoint([doughnut2 frame],position)){
-		[doughnut2 setCenter:position];
+	if(CGRectContainsPoint([monkeyBelly frame],position)){
+		imgView2.hidden = YES;
+		[m_monkey startEating:imgView2];
 	}
-	else if(CGRectContainsPoint([doughnut3 frame],position)){
-		[doughnut3 setCenter:position];
+	else{
+		[imgView2 setCenter:position];
+		[self.view bringSubviewToFront:imgView2];
+		
 	}
-	else if(CGRectContainsPoint([doughnut4 frame],position)){
-		[doughnut4 setCenter:position];
-	}
-	else if(CGRectContainsPoint([doughnut5 frame],position)){
-		[doughnut5 setCenter:position];
-	}
+	
+	
 	
 	/*if (CGRectContainsPoint([monkeyHead frame], position)) {
 		imgView2 = monkeyHead;
@@ -361,6 +384,7 @@ typedef enum BodyPart{
 // Handles the start of a touch
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	
 	NSLog(@"Touch Began");
 	NSUInteger touchCount = 0;
 	for (UITouch *touch in touches) {
@@ -373,6 +397,7 @@ typedef enum BodyPart{
 // Handles the continuation of a touch.
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	touching = YES;
 	//NSLog(@"Touches Moved");
 	NSUInteger touchCount = 0;
 	// Enumerates through all touch objects
@@ -385,6 +410,7 @@ typedef enum BodyPart{
 // Handles the end of a touch event.
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	touching = NO;
 	NSLog(@"Touches Ended");
 	//touchPhaseText.text = @"Phase: Touches ended";
 	// Enumerates through all touch object
@@ -393,6 +419,7 @@ typedef enum BodyPart{
 		[self dispatchTouchEndEvent:[touch view] toPosition:[touch locationInView:self.view]];
 	}
 	imgView = NULL;
+	imgView2 = NULL;
 }
 
 
@@ -401,7 +428,8 @@ typedef enum BodyPart{
 }
 -(IBAction) BellyTouch:(id) sender{
 	//[m_monkey startWalk];
-	[m_monkey startEating];
+	//[m_monkey startEating];
+	[self reset];
 }
 
 -(void)gameloop{
@@ -503,6 +531,7 @@ typedef enum BodyPart{
 
 
 -(void) viewWillAppear:(BOOL)animated{
+	touching = NO;
 	pageControl.numberOfPages = kNumberOfPages;
     pageControl.currentPage = 0;
 	
@@ -512,6 +541,27 @@ typedef enum BodyPart{
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
 }
+
+-(void) reset{
+	[m_monkey init];
+	imgView2 = NULL;
+	doughnut.hidden = YES;
+	doughnut1.hidden = NO;
+	doughnut2.hidden = NO;
+	doughnut3.hidden = NO;
+	doughnut4.hidden = NO;
+	doughnut5.hidden = NO;
+	
+	firstPoint.x = -1;
+	CGPoint position;
+	position.x = 291+ 37.5;
+	position.y = 48 + 37.5;
+	
+	doughnut1.transform = CGAffineTransformIdentity;
+	
+	[doughnut1 setCenter:position];
+}
+
 // Implement viewDidLoad to do  additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
